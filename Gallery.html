@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>C&A Hochzeit</title>
-        <script src="jsHCA.js"></script>
-        
-    </head>
-    
-    <body>
-        <h1>
-         Hochzeitszeitung
-        </h1>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C&A Hochzeit</title>
+    <script src="./jsHCA.js"></script>
+
+</head>
+
+<body onload="main()">
+    <h1>
+        Hochzeitszeitung
+    </h1>
+
+    <p id=timer></p>
+
         
         <nav>
          <ul>
 
           <li>
-           <a id="Home" class="section" href="Hochzeit.html">
+           <a id="Home" class="section" href="index.html">
             Home
            </a>
           </li>
@@ -53,10 +60,13 @@
          </ul>
         </nav>
         
-        <h2>
+        <h2 align="center">
          Gallery
         </h2>
-       
+    
+        <p>Das ist die Gallery Sektion. Hier könnt ihr die Bilder die ihr auf der Hochzeit gemacht habt hochladen und andere Bilder downloaden</p>
+
+        <input type = "file" name= "Bild hochladen" accept ="image/*" />
         
        
       
