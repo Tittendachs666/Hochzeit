@@ -23,3 +23,16 @@ function main() {
     weddingDate = new Date("Aug 24, 2019 13:00:00");
     setInterval(this.updateCountdown,1000);
 }
+
+
+function password() {
+
+ if(document.getElementById("button").click == true){
+  if(document.getElementById("passW") == "Singularität"){
+   window.location = "index.html";
+  }
+  else{
+   alert("falsches Passwort");
+  }
+ }
+}
