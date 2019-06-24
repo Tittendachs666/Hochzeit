@@ -25,14 +25,14 @@ function main() {
 }
 
 
-function password() {
+function checkPassword() {
 
- if(document.getElementById("button").click == true){
+ 
   if(document.getElementById("passW") == "Singularität"){
    window.location = "index.html";
   }
   else{
    alert("falsches Passwort");
   }
- }
+ 
 }
