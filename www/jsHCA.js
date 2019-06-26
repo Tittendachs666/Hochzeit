@@ -36,3 +36,15 @@ function checkPassword() {
   }
  
 }
+
+function imageload(){
+  var column = document.createElement("div");
+  var img = new Image(100,100);
+  img.src = document.getElementById("Image");
+  
+  column.appendChild(img);
+
+  var reihe = document.getElementById("row");
+  document.body.insertBefore(column,reihe.childNodes[0].innerHTML);
+}
+  
