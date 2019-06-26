@@ -28,7 +28,7 @@ function main() {
 function checkPassword() {
 
  
-  if(document.getElementById("passW") == "Singularität"){
+  if(document.getElementById("passW").value == "Singularität"){
    window.location = "index.html";
   }
   else{
