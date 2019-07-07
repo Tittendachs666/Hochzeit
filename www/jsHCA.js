@@ -20,7 +20,7 @@ if (distance < 0) {
 }
 
 function main() {
-    weddingDate = new Date("Aug 24, 2019 13:00:00");
+    weddingDate = new Date("Aug 24, 2019 15:30:00");
     setInterval(this.updateCountdown,1000);
 }
 
