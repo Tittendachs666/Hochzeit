@@ -23,47 +23,44 @@
     <p id=timer></p>
 
         
-        <nav>
-         <ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Inhalte</a>
 
-          <li>
-           <a id="Home" class="section" href="index.html">
-            Home
-           </a>
-          </li>
-          
-          <li>
-           <a id="Programm" class="section" href="Programm.html">
-            Programm
-           </a>
-          </li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <li>    
-            <a id="Cassian" class="section" href="Cassian.html">
-             Cassian
-            </a>
-          </li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav">
 
-          <li>
-           <a id="Antje" class="section" href="Antje.html">
-            Antje
-           </a>
-          </li>
+         <li class="nav-item active">
+           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+         </li>
 
-          <li>
-           <a id="Gallery" class="section" href="Gallery.html">
-            Gallery
-           </a>
-          </li>
+         <li class="nav-item">
+          <a class="nav-link" href="Programm.html">Programm</a>
+         </li>
 
-          <li>
-           <div id="Kommentare" class="section">
-            Kommentare
-           </div>
-          </li>
-      
-         </ul>
-        </nav>
+         <li class="nav-item">
+          <a class="nav-link" href="Cassian.html">Cassian</a>
+         </li>
+
+         <li class="nav-item">
+          <a class="nav-link" href="Antje.html">Antje</a>
+         </li>
+
+         <li class="nav-item">
+          <a class="nav-link" href="Gallery.html">Gallerie</a>
+         </li>
+
+         <li class="nav-item">
+          <a class="nav-link" href="Kommentare.html">Kommentare</a>
+         </li>
+
+       </ul>
+      </div>
+     </nav>
+
 
         <h2 align="center">
          Kommentarsektion
@@ -71,7 +68,8 @@
         
         <p>Das ist die Kommentarsektion. Ihr könnt hier, so wie die Trauzeugen, eure Glückwünsche an das Brautpaar verewigen oder einfach schreiben was euch auf dem aherzen liegt.</p>
         
-        <p>Liebe Antje, lieber Cassian,<br/><br>
+        <blockquote class="blockquote">
+           <p class="mb-0">Liebe Antje, lieber Cassian,<br/>
            wir sagen: „Herzlichen Glückwunsch zur Hochzeit und wünschen euch nur das Beste für eine<br/>
            gemeinsame Zukunft. Gebt einander immer auf euch Acht und begegnet euch täglich mit einem<br/>
            Lächeln im Gesicht.“<br/>
@@ -81,8 +79,8 @@
            so glücklich zu erleben und auf dem Weg in einen neuen Lebensabschnitt zu begleiten.<br/>
            Wir freuen uns auf weitere viele Jahre mit euch gemeinsam.<br/>
            Freundschaft bedeutet, dass man mit Freunden alles schafft!<br/>
-           Danke für euer Vertrauen in uns und eure Freundschaft!<br/><br>
-           Eure Trauzeugen Lital und Christopher<br/></p>
+           Danke für euer Vertrauen in uns und eure Freundschaft!<br/>
+           <footer class="blockquote-footer">Eure Trauzeugen <cite title="Source Title">Lital und Sozi</cite></footer>
 
         <form>
 	  <input name="name" placeholder="dein Name" type="text" required /><br/>
