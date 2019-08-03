@@ -8,14 +8,89 @@
     <title>C&A Hochzeit</title>
     <script src="./jsHCA.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   
+    
+    <!-- Firebase storage -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-storage.js"></script>
+    <script src="./firebase.config.js"></script>
+
+    <script>
+
+    var imageContainer;
+    var displayImage;
+
+    //function to save file
+    function uploadFile(){
+      
+      // Created a Storage Reference with Bilder dir
+      var storageRef = firebase.storage().ref("Bilder");
+      // Get the file from DOM
+      var file = document.getElementById("file").files[0];
+      console.log(file);
+      
+      const name = (+new Date()) + '-' + file.name;
+      const metadata = {
+        contentType: file.type
+      };
+
+      //dynamically set reference to the file name
+      var thisRef = storageRef.child(name);
+
+      //put request upload file to firebase storage
+      thisRef.put(file, metadata).then( function(snapshot) {
+         alert("File Uploaded")
+         load();
+      });
+    }
+
+    async function load() {
+      var imageRef = await firebase.storage().ref("Bilder").list();
+
+      imageContainer = document.getElementById('images');
+      
+      while (imageContainer.firstChild) {
+          imageContainer.firstChild.remove();
+      }
+
+      console.log(imageRef.items);
+
+      imageRef.items.forEach( async file => {
+        // Create Image
+        const url = await file.getDownloadURL();
+        const img = new Image()
+        img.src = url;
+        img.height = "200";
+        
+        // Create Modal Button
+        const modalButton = document.createElement("button");
+        
+        modalButton.onclick = () => {
+          const bigImg = new Image()
+          bigImg.src = url;
+          bigImg.height = "500";
+          
+          $('#imageModal').modal('show')
+          $("#modalImage" ).html( bigImg );
+        }
+        
+        modalButton.appendChild(img)
+
+        imageContainer.appendChild(modalButton);
+      })
+    }
+
+    open
+
+    </script>
+
+
     <style>
 
     </style> 
 
 </head>
 
-<body onload="main()">
+<body onload="load()">
     <h1>
         Hochzeitszeitung
     </h1>
@@ -68,16 +143,36 @@
     
         <p>Das ist die Gallery Sektion. Hier könnt ihr die Bilder die ihr auf der Hochzeit gemacht habt hochladen und andere Bilder downloaden</p>
 
-        <input id="Image" type = "file" name= "Bild hochladen" accept ="image/*" />
+        <input id="file" type = "file" name= "Bild hochladen" accept ="image/*" />
 
-        <button onclick = "imageload()">Reinstellen</button>
+        <button onclick = "uploadFile()">Reinstellen</button>
         
-        <div id="row" class ="reihe">
-         <div> <img src=""/></div>
+        <div id="images"></div>
+        
+        <!-- Bootstrap model -->
+      <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div id="modalImage"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
         </div>
-        
-       
-      
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
         
     </body>
