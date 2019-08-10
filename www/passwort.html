@@ -9,14 +9,39 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    
         <style>
-
+        body{
+          background-color:#5A2998;
+          }
+        p.font{
+          color: #FFFFFF;
+          font-size: large;
+          }
+        img{
+          margin-top:100px;
+          margin-bottom:20px;
+          }
+        input.input{
+          margin-bottom:20px;
+          }
+        button.button{
+          margin-bottom:100px;
+          }
         </style> 
         
     </head>
     
     <body>
-    <p> bitte Passwort eingeben</p>
-    <input id="passW"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="password" type="password"/>
-    <button onclick="checkPassword()" class="btn btn-primary" >anmelden</button>
+    <div align="center">
+    <img src="password.JPG"
+        height= "50%"
+        width= "50%"
+        alt=""
+      />
+    </div>
+    <p align ="center" class="font"> bitte Passwort eingeben</p>
+    <input id="passW"  class="form-control input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="password" type="password"/>
+    <div align="center">
+    <button onclick="checkPassword()" class="btn btn-info button" >anmelden</button>
+    </div>
     </body>
 </html>
