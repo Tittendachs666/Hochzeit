@@ -10,21 +10,66 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    
     <style>
+      .font {
+       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+       postion: relative;
+       left: 50px; 
+       top: 150px;
+       
+       }
 
+       h2.font {
+       margin-top:20px;
+       margin-bottom: 20px;
+       background-color:#5A2998;
+       color: #FFFFFF;
+           
+            
+       }
+
+       p.font {
+       background-color:#6600FF;
+       color: #FFFFFF;
+       padding:10px;
+       margin-top:10px;
+       margin-left:20px;
+       margin-right:20px;
+       margin-bottom:30px;
+       border: 2px solid white;
+       border-radius: 20px;
+       font-size: large;
+       }
+      
+      div.background {
+       position: fixed;
+       width: 100%;
+       height:100%;
+       z-index: 1;
+       background-color:#5A2998;
+       }
+
+      .timer{
+       margin-top:10px;
+       margin-left:20px;
+       }
+       div.carousel{
+       margin-bottom:500px;
+       }
+      
     </style> 
 
 </head>
 
 <body onload="main()">
-    <h1>
-        Hochzeitszeitung
-    </h1>
+    
+    <div class="background">
 
-    <p id=timer></p>
+    
+    <p class="btn btn-lg btn-info timer" id=timer></p>
 
         
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Inhalte</a>
+      <a class="navbar-brand font" href="#">Hochzeitszeitung</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -62,12 +107,79 @@
      </nav>
 
         
-        <h2 align="center">
+        <h2 align="center" class ="font">
          Die Geschichte der Naschkatze
         </h2>
         
-        <p></p>
-      
+        <p class ="font"></p>
+
+
+        <div id="carouselExampleControls" class="carousel slide carousel" data-ride="carousel">
+           <div class="carousel-inner">
+
+             <div align = "center" class="carousel-item active">
+              <img src="AntjeCrazy.JPG" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="AntjeOldFriends1.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="AntjeBaby.JPG" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="AntjeOldFriends2.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="AntjeFamily.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="AntjeD.JPG" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="AntleOldFriends3.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="AntjeFratze.jpg" class="d-block w-10" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+             <img src="AntjeFriends1.JPG" class="d-block w-80" alt="...">
+            </div>
+
+             <div  align = "center"class="carousel-item">
+              <img src="AntjeFriends2.JPG" class="d-block w-80" alt="...">
+             </div>
+
+             <div  align = "center"class="carousel-item">
+              <img src="AntjeOldFriends4.jpg" class="d-block w-80" alt="...">
+             </div>
+           </div>
+
+           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+           </a>
+
+           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+           </a>
+        </div>
+
+    
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
         
         
     </body>
