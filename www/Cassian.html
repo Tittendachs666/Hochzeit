@@ -11,22 +11,60 @@
    
     <style>
      blockquote.blockquote{
-      font-size: small;
+       background-color:#6600FF;
+       color: #FFFFFF;
+       padding:10px;
+       margin-top:10px;
+       margin-left:20px;
+       margin-right:20px;
+       border: 2px solid white;
+       border-radius: 20px;
+       font-size: small;
       }
+
+       h2 {
+       margin-top:20px;
+       margin-bottom: 20px;
+       background-color:#5A2998;
+       color: #FFFFFF;
+           
+            
+       }
+
+     div.background {
+       position: fixed;
+       width: 100%;
+       height:100%;
+       z-index: 1;
+       background-color:#5A2998;
+       }
+
+     .timer{
+       margin-top:10px;
+       margin-left:20px;
+       
+       
+       }
+
+
+      div.carousel{
+      margin-bottom: 500px;
+      }
+
+
     </style> 
 
 </head>
 
 <body onload="main()">
-    <h1>
-        Hochzeitszeitung
-    </h1>
+   
+    <div class="background">
 
-    <p id=timer></p>
+    <p class="btn btn-lg btn-info timer" id=timer ></p>
 
         
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Inhalte</a>
+      <a class="navbar-brand font" href="#">Hochzeitszeitung</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -68,7 +106,7 @@
          Cassian a.k.a. der Panda 
         </h2>
 
-        <div class="border border-info">
+        
         <blockquote class="blockquote">
 
         <p class="mb-0">Cassian Kai Rücker erblickte am 29.09.1987, um 13.30 Uhr, mit einem Gewicht von 3850g
@@ -141,21 +179,49 @@
           Entscheidung Antje als deine Frau zu nehmen. Ihr Zwei könnt mit all euren Schwierigkeiten
           und Problemen zu uns kommen, die Tür steht immer offen.</p>
           <footer class="blockquote-footer">Knuddel Knutsch, <cite title="Source Title">deine Eltern</cite></footer>
-          </div>
+          </blockquote>
 
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div id="carouselExampleControls" class="carousel slide carousel" data-ride="carousel">
            <div class="carousel-inner">
 
-             <div class="carousel-item active">
-              <img src="cassistadium.jpg" class="d-block w-100" alt="...">
+             <div align = "center" class="carousel-item active">
+              <img src="cassistadium.jpg" class="d-block w-80" alt="...">
              </div>
 
-             <div class="carousel-item">
-              <img src="cassi Fratze.JPG" class="d-block w-100" alt="...">
+             <div align = "center" class="carousel-item">
+              <img src="cassi Fratze.JPG" class="d-block w-80" alt="...">
              </div>
 
-             <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="...">
+             <div align = "center" class="carousel-item">
+              <img src="C&AHochzeit1.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="CassiFamily.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="CassiFriends1.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="CassiHochzeit1.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="Bilder für Paul 004.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="cassiUpapa.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="CassiFriends2.jpg" class="d-block w-80" alt="...">
+             </div>
+
+             <div align = "center" class="carousel-item">
+              <img src="CassiBro.JPG" class="d-block w-80" alt="...">
              </div>
            </div>
 
@@ -170,7 +236,11 @@
            </a>
           </div>
        
-        
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
        
       
         
