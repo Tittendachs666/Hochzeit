@@ -10,27 +10,79 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    
     <style> 
+      .font {
+       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+       postion: relative;
+       left: 50px; 
+       top: 150px;
+       }
      blockquote.blockquote{
-      font-size: small;
+       background-color:#6600FF;
+       color: #FFFFFF;
+       padding:10px;
+       margin-top:10px;
+       margin-left:20px;
+       margin-right:20px;
+       border: 2px solid white;
+       border-radius: 20px;
+       font-size: large;
      }
-     div.border border-info{
-      border:5px;
+     
+     p.font{
+       background-color:#6600FF;
+       color: #FFFFFF;
+       padding:10px;
+       margin-top:10px;
+       margin-left:20px;
+       margin-right:20px;
+       border: 2px solid white;
+       border-radius: 20px;
+       font-size: large;
      }
+     div.background {
+       width: 100%;
+       height:100%;
+       z-index: 1;
+       background-color:#5A2998;
+       }
+     .timer{
+       margin-top:10px;
+       margin-left:20px;
+       }
+       h2 {
+       margin-top:20px;
+       margin-bottom: 20px;
+       background-color:#5A2998;
+       color: #FFFFFF;
+       }
+       .blockquote-footer{
+       color:#FFFFFF;
+       }
+       .form-group{
+        margin-left:20px;
+       }
+       input.input{
+        margin-top: 20px;
+        border-radius:5px;
+        }
+       textarea.text{
+        border-radius:5px;
+        margin-bottom:20px;
+        margin-top:10px;
+       }
 
     </style> 
 
 </head>
 
 <body onload="main()">
-    <h1>
-        Hochzeitszeitung
-    </h1>
-
-    <p id=timer></p>
+    <div class = "background">
+    
+    <p class="btn btn-lg btn-info timer" id=timer></p>
 
         
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Inhalte</a>
+      <a class="navbar-brand font" href="#">Hochzeitszeitung</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,7 +108,7 @@
          </li>
 
          <li class="nav-item">
-          <a class="nav-link" href="Gallery.html">Gallerie</a>
+          <a class="nav-link" href="Gallery.html">Gallery</a>
          </li>
 
          <li class="nav-item">
@@ -68,15 +120,15 @@
      </nav>
 
 
-        <h2 align="center">
+        <h2 align="center" class ="font">
          Kommentarsektion
         </h2>
         
-        <p>Das ist die Kommentarsektion. Ihr könnt hier, so wie die Trauzeugen, eure Glückwünsche an das Brautpaar verewigen oder einfach schreiben was euch auf dem aherzen liegt.</p>
+        <p class= "font">Das ist die Kommentarsektion. Ihr könnt hier, so wie die Trauzeugen, eure Glückwünsche an das Brautpaar verewigen oder einfach schreiben was euch auf dem Herzen liegt.</p>
 
-        <div class="border border-info">
+        
 
-        <blockquote class="blockquote">
+        <blockquote class="blockquote font">
            <p class="mb-0">Liebe Antje, lieber Cassian,<br/>
            wir sagen: „Herzlichen Glückwunsch zur Hochzeit und wünschen euch nur das Beste für eine<br/>
            gemeinsame Zukunft. Gebt einander immer auf euch Acht und begegnet euch täglich mit einem<br/>
@@ -89,14 +141,19 @@
            Freundschaft bedeutet, dass man mit Freunden alles schafft!<br/>
            Danke für euer Vertrauen in uns und eure Freundschaft!<br/></p>
            <footer class="blockquote-footer">Eure Trauzeugen <cite title="Source Title">Lital und Sozi</cite></footer>
-        </div> 
-
-        <form>
-	  <input name="name" placeholder="dein Name" type="text" required /><br/>
-          <textarea name="Kommentar" placeholder="dein Kommentar" required ></textarea>
+           </blockquote>
         
-       
+
+        <form class="form-group">
+	  <input class="input" name="name" placeholder="dein Name" type="text" required /><br/>
+          <textarea class="text" name="Kommentar" placeholder="dein Kommentar" required ></textarea>
+        
+       </form>
       
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
         
     </body>
