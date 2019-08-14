@@ -8,7 +8,13 @@
     <title>C&A Hochzeit</title>
     <script src="./jsHCA.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   
+    
+    <!-- Firebase storage -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+    <script src="./firebase.config.js"></script>
+
+
     <style> 
       .font {
        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -73,9 +79,63 @@
 
     </style> 
 
+    <script>
+    let db;
+    
+    function onLoad() {
+      db = firebase.firestore();
+      load();
+      main();
+    }
+      
+    function uploadCommend() {
+      const author = document.getElementById("nameinput").value;
+      const content = document.getElementById("textfield").value;
+
+      const comment = {
+        author,
+        content,
+        postedAt: new Date()
+      }
+
+      db.collection("Kommentare").add(comment).then(_ => load())
+    }
+    
+    async function load() {
+      const comments = [];
+      const container = document.getElementById('comment-container');
+      const comCol = await db.collection("Kommentare").get();
+      
+      comCol.forEach(element => {
+        comments.push(element.data());
+      });
+
+      $(container).empty()
+
+      for(let comment of comments) {
+        const warpper = createCommentDiv(comment);
+        container.appendChild(warpper);
+      }
+
+    }
+
+    function createCommentDiv(comment) {
+      const commentDiv = document.createElement('div')
+
+      $(commentDiv).html(
+         '<blockquote class="blockquote font">' + comment.content +
+            '<footer class="blockquote-footer">' + comment.author + '</footer>'
+      + '</blockquote>');
+
+      return commentDiv;
+    }
+
+    </script>
+
+
 </head>
 
-<body onload="main()">
+<body onload="onLoad()">
     <div class = "background">
     
     <p class="btn btn-lg btn-info timer" id=timer></p>
@@ -126,7 +186,7 @@
         
         <p class= "font">Das ist die Kommentarsektion. Ihr könnt hier, so wie die Trauzeugen, eure Glückwünsche an das Brautpaar verewigen oder einfach schreiben was euch auf dem Herzen liegt.</p>
 
-        
+
 
         <blockquote class="blockquote font">
            <p class="mb-0">Liebe Antje, lieber Cassian,<br/>
@@ -143,12 +203,14 @@
            <footer class="blockquote-footer">Eure Trauzeugen <cite title="Source Title">Lital und Sozi</cite></footer>
            </blockquote>
         
+        <div id="comment-container"></div>
 
         <form class="form-group">
-	  <input class="input" name="name" placeholder="dein Name" type="text" required /><br/>
-          <textarea class="text" name="Kommentar" placeholder="dein Kommentar" required ></textarea>
-        
+	        <input id="nameinput"class="input" name="name" placeholder="dein Name" type="text" required /><br/>
+          <textarea id="textfield" class="text" name="Kommentar" placeholder="dein Kommentar" required ></textarea>
        </form>
+
+      <button onclick="uploadCommend()">Kommentar absenden</button>
       
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
