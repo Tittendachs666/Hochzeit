@@ -52,10 +52,11 @@
 
     async function load() {
 
+      imageContainer = document.getElementById('images');
+      imageContainer.innerHTML = "Loading ...";
+
       var imageRef = await firebase.storage().ref("Bilder").list();
 
-      imageContainer = document.getElementById('images');
-      
       $(imageContainer).empty();
 
       const imagesUrls = await Promise.all(imageRef.items.map(x => x.getDownloadURL()))
@@ -67,19 +68,23 @@
         img.src = url;
         img.height = "200";
         
-        // Create Modal Button
+        // Create Image button for opening the modal
         const modalButton = document.createElement("button");
         
         modalButton.onclick = () => {
+
+          // Insert image in modal
           const bigImg = new Image()
           bigImg.src = url;
           bigImg.height = "500";
+          $("#modalImage" ).html( bigImg );
           
+          // Download Button
           const dwn_btn = '<a href='+ url +' download="image.png"> <button> Download </button></a>';
           $("#download-button").html(dwn_btn);
-
+          
+          // Open modal
           $('#imageModal').modal('show')
-          $("#modalImage" ).html( bigImg );
         }
         
         modalButton.appendChild(img)
@@ -161,7 +166,7 @@
         width: 100%;
         flex-wrap: wrap;
       }
-      .image-wrapper {
+      .wrapper {
         padding: 0 50px;
       }
     </style> 
@@ -213,6 +218,7 @@
       </div>
      </nav>
 
+     <div class="wrapper">
         
         <h2 class="font" align="center">
          Gallery
@@ -224,9 +230,8 @@
 
         <button class="btn btn-info button" onclick = "uploadFile()">Reinstellen</button>
         
-        <div class="image-wrapper">
           <div id="images"></div>
-        </div>
+      </div>
         
         <!-- Bootstrap model -->
       <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalTitle" aria-hidden="true">
