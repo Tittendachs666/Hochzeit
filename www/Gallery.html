@@ -26,7 +26,6 @@
       var storageRef = firebase.storage().ref("Bilder");
       // Get the file from DOM
       var file = document.getElementById("file").files[0];
-      console.log(file);
       
       const name = (+new Date()) + '-' + file.name;
       const metadata = {
@@ -43,7 +42,13 @@
       });
     }
 
+    function onLoad() {
+      load();
+      main();
+    }
+
     async function load() {
+
       var imageRef = await firebase.storage().ref("Bilder").list();
 
       imageContainer = document.getElementById('images');
@@ -78,8 +83,6 @@
         imageContainer.appendChild(modalButton);
       })
     }
-
-    open
 
     </script>
 
@@ -141,7 +144,7 @@
 
 </head>
 
-<body onload="load()">
+<body onload="onLoad()">
     
     <div class="background">
 
